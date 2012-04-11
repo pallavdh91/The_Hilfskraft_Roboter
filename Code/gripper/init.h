@@ -35,8 +35,8 @@ void lcd_port_config (void)
 
 void config()
 {
-	DDRJ = 0xff; //led output
-	PORTJ = 0xff;
+	DDRJ = 0x00; //UART3 Input
+	PORTJ = 0x00; // Set to 0
 
 	DDRC = DDRC | 0x08; //set output for buzzer PC3 
 	PORTC = PORTC & 0xf7;

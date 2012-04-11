@@ -93,19 +93,20 @@ unsigned char rline = 0;
 unsigned char fsharp=0;
 unsigned char fir=0;
 
-//int leftspeed=165; // 140 for bot 1 , 105 for bot2
-//int rightspeed = 165;
-//int delta = -65; // positive if right is faster .. -65 for bot1 and -5 for bot2
+int leftspeed=120; // 140 for bot 1 , 105 for bot2
+int rightspeed = 120;
+int delta = -65; // positive if right is faster .. -65 for bot1 and -5 for bot2
+
 float kp=1;
 float kd=0;
 float ki=0;
-int prop=0;
-int der=0;
-int integral=0;
-int last_prop=0;
-int pow_diff;
+float prop=0;
+float der=0;
+float integral=0;
+float last_prop=0;
+float pow_diff;
 int max=200; //speed
-int thresh = 160;
+int thresh = 150;
 
 
 
@@ -143,11 +144,16 @@ void init_sensor_values(void)
 	lline = ADC_Conversion(3);	//Getting data of Left WL Sensor
 	cline = ADC_Conversion(2);	//Getting data of Center WL Sensor
 	rline = ADC_Conversion(1);	//Getting data of Right WL Sensor
-
+	char str[4];
+	str[0] = lline;
+	str[1] = cline;
+	str[2] = rline;
+	str[3] = ',';
+	//xbee_sendString(str,4);
 	print_sensor(2,1,3);		//Prints value of White Line Sensor Left
 	print_sensor(2,5,2);		//Prints value of White Line Sensor Center
 	print_sensor(2,9,1);		//Prints Value of White Line Sensor Right
-
+	/*
 	if(lline < thresh )
 	{
 		if(cline < thresh) prop =max/2; // white white black
@@ -165,7 +171,7 @@ void init_sensor_values(void)
 	pow_diff = kp*prop + ki*integral + kd*der;
 	if(pow_diff > max) pow_diff = max;
 	if(pow_diff < -max) pow_diff = -max;
-	
+	*/
 	fsharp = ADC_Conversion(11);
 	fir = ADC_Conversion(6);
 }
@@ -179,9 +185,11 @@ void take_turn(int d)
 		if(d==1) left();
 		else if(d==2) right();
 		init_sensor_values();
-		if(pow_diff < 0) velocity((max+pow_diff), max);
-		else velocity(max, (max-pow_diff));	
-		
+		//if(pow_diff < 0) velocity((max+pow_diff), max);
+		//else velocity(max, (max-pow_diff));	
+		if(d==1) velocity(leftspeed,(rightspeed-delta));
+		else if(d==2) velocity(leftspeed,(rightspeed-delta));
+
 		if(cline<thresh && lline<thresh && rline<thresh)  //all on white
 		{
 			stop();
@@ -194,8 +202,10 @@ void take_turn(int d)
 		if(d==1) left();
 		else if(d==2) right();
 		init_sensor_values();
-		if(pow_diff < 0) velocity((max+pow_diff)/2, max/2);
-		else velocity(max/2, (max-pow_diff)/2);
+		//if(pow_diff < 0) velocity((max+pow_diff)/2, max/2);
+		//else velocity(max/2, (max-pow_diff)/2);
+		if(d==1) velocity(leftspeed*0.5,(rightspeed-delta));
+		else if(d==2) velocity(leftspeed,(rightspeed-delta)*0.5);
 
 		if(cline>thresh && lline>thresh*0.6 && d==1) flag=1;
 		if(cline>thresh && rline>thresh*0.6 && d==2) flag=1;
@@ -238,18 +248,20 @@ int checkobstacle()
 
 int checkintersection()
 {
-	if( cline<0x28 && lline < 0x28 && rline < 0x28)
+	init_sensor_values();
+	_delay_ms(1);
+	if( cline>thresh && lline>thresh && rline >thresh)
 	{
-
+		buzzer_on();
 		lcd_cursor(1,1);		
 		lcd_string("Intersection");
 		init_sensor_values();
 		forward();
-		if(pow_diff < 0) velocity(max+pow_diff, max);
-		else velocity(max, max-pow_diff);
-		_delay_ms(1000);		
+		velocity(leftspeed,(rightspeed-delta));
+		_delay_ms(200);		
 		stop();
-		_delay_ms(2000);
+		_delay_ms(1000);
+		buzzer_off();
 		return 1;
 	}
 	return 0;
@@ -262,9 +274,21 @@ void follow()
 	lcd_string("Go Straight");
 	init_sensor_values();
 	forward();
-	if(pow_diff < 0) velocity(max+pow_diff, max);
-	else velocity(max, max-pow_diff);
-
+	//if(pow_diff < 0) velocity(max+pow_diff, max);
+	//else velocity(max, max-pow_diff);
+	int left = leftspeed;
+	int right = rightspeed-delta;
+	if(cline>thresh)
+	{
+		if(lline>thresh) left = left*0.7;
+		else if(rline>thresh) right = right*0.7;
+	}
+	else
+	{
+		if(lline>thresh) left = left/2;
+		else if(rline>thresh) right = right/2;
+	}
+	velocity(left,right);
 	if((cline<thresh) && (lline<thresh) && (rline<thresh) ) 
 	{
 		

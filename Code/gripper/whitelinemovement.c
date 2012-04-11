@@ -13,6 +13,46 @@
 #include "signals.h"
 #include "rfid.h"
 #include "arm.h"
+void checkfollow(void)
+{
+	int temp12=0;
+	while(1)
+	{
+		init_sensor_values();
+		while(checkobstacle()==0) {} 		
+		if(checkintersection() == 1 )
+		{	
+			temp12++;
+			if(temp12==2){ turn_left(); temp12=0; }
+			else follow();
+			
+		}
+		else 
+		{
+			follow();
+		}
+		
+	}
+}
+
+void checkarm(void)
+{
+	while(1)
+	{
+		arm_up();
+		_delay_ms(2000);
+		arm_down();
+		_delay_ms(2000);
+	}
+}
+
+void checkstraight()
+{
+	while(1)
+	{
+		follow();
+	}
+}
 
 
 int move_bot()
@@ -40,8 +80,7 @@ void run(void)
 	while(1)
 	{
 		while(data == 'w') //waiting for signal
-		{
-			
+		{	
 		}
 		while(data == '\0' )
 		{
@@ -79,70 +118,54 @@ void run(void)
 			_delay_ms(100);
 			continue;
 		}
-		if(data == 'c') //collect item
+		if(data == 'c') //collect item data -> i when the bot is trying to pick up an rfid
 		{
-			data='\0';
+			data='w';
 			arm_down();
-			hold();
+			_delay_ms(4200);
+			stop_arm();
+			_delay_ms(2000);
+	       	grab();
 			arm_up();
-			_delay_ms(1000);
+		    _delay_ms(4750);
+		    stop_arm();
+		    _delay_ms(2000);
+			lcd_cursor(2,1);
+			lcd_string("Collecting");
+			_delay_ms(3500);
+			readrfidtag();	
+			clearrfid();     
+			continue;   
+			
 		}
 		if(data == 'd') //drop_item
 		{
-			data='\0';
-			arm_down();
-			leave();
-			arm_up();
-			_delay_ms(1000);
+			data='w';
+			go_down();
+			release();
+	        go_up();
+			lcd_cursor(2,1);
+			lcd_string("Dropping");
+			_delay_ms(3500);
+			senddroppedsig();
+			continue;
 		}
-		while(move_bot() == 1) { }
-	}
-}
-
-
-void checkfollow(void)
-{
-	int temp12=0;
-	while(1)
-	{
-		init_sensor_values();
-		while(checkobstacle()==0) {} 
-		buzzer_off();
-		follow();
 		
-		if(checkintersection() == 1 )
-		{	
-			temp12++;
-			if(temp12==2){ turn_right(); temp12=0; }
-			else follow();
-			
-		}
-		else 
+		while(1) 
 		{
-			follow();
+			if(move_bot() == 1)
+			{
+				continue;
+			}
+			else 
+			{
+				break;
+			}
 		}
-		
 	}
 }
 
-void checkarm(void)
-{
-	while(1)
-	{
-		arm_up();
-		_delay_ms(2000);
-		arm_down();
-		_delay_ms(2000);
-	}
-}
 
-void checkstraight()
-{
-	while(1)
-	{
-		follow();
-	}
-}
 
 int main(void)
 {
@@ -150,12 +173,12 @@ int main(void)
 	lcd_cursor(1,1);		
 	lcd_string("Welcome");
 	
-	UDR0 = 'a';
-	checkstraight();
+	//UDR0 = 'a';
+	//checkstraight();
 
 	//checkfollow();
 	//checkarm();
-	//run();
+	run();
 	
 	
 }

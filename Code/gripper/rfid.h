@@ -57,14 +57,21 @@ SIGNAL(SIG_USART3_RECV) 		// ISR for receive complete interrupt
 	rfid_count ++;
 	if(rfid_count == 4)
 	{
+		lcd_cursor(2,1);		
+		lcd_string("RfidRead");
 		rfidval[4] = '\0';
-		lcd_cursor(1,1);
-		lcd_string(rfidval);
-		readrfidtag();
 	}
-		 
 	sei();
 }
+
+void clearrfid()
+{
+	rfidval[0]='\0';
+	rfidval[1]='\0';
+	rfidval[2]='\0';
+	rfidval[3]='\0';
+}
+
 //protocol : dbot :#g srcid/destid.data#
 void readrfidtag()
 {
@@ -78,5 +85,5 @@ void readrfidtag()
 	str[6] = rfidval[3];
 	str[7] = '\0';
 	rfid_count=0;
-	xbee_sendString(str);
+	xbee_sendString(str,7);
 }
