@@ -7,7 +7,7 @@ char getStringTemp()
 	//name = new char[2];
      if(ReadFile(hSerial,&name, 1,&dwBytesRead, NULL)==0)
      {
-		printf("unable to read check the port\n");
+		printf("unable to read check the port(reading)\n");
      }
 	 return name;
 }
@@ -37,11 +37,11 @@ void sendString(char name[])
 {
      if(!WriteFile(hSerial,name, strlen(name), &dwBytesWrote, NULL))
      {
-         printf("unable to write check the port\n");
+         printf("unable to write check the port(sending)\n");
 	 }
 	 else
 	 {
-		printf("Sending data:%s\n",name);
+		printf("Sending data:%s:\n",name);
 	 }
 
 }

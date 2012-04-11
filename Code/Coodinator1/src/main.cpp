@@ -7,30 +7,32 @@
 #include "xbee.h"
 #include "functions.h"
 
-int getdestn(char *rfid) // this function will decide where to place it.
+int getdestn_rfid(char *rfid) // this function will decide on which dbot to place to object it.
 {
-	return 0;
-
+	if(strcmp(rfid,"4108") == 0) return 0;
+	else if(strcmp(rfid,"410E") == 0) return 1;
+	else return -1;
 }
+
+Point getdestn_obj()
+{
+	Point to_return = Point(3,4);
+	return to_return;
+}
+
+
 
 void deliver(char *data) // code for delivery bot
 {
-	char *temp;
-	temp = new char[5];
-	int i=0;
-	while(data[i] != '.') { temp[i] = data[i]; i++; }
-	temp[i] = '\0'; 
-	data=new char[100];
-
+	
 	char *to_send;
 	to_send = new char[4];
-	to_send[0] = temp[0];
+	to_send[0] = data[0];
+	to_send[1] = data[1];
 
-	int bot_number =atoi(temp);
-	printf("BOT %d\n",bot_number);
-	bot_number--;
-	if( lastsigd[bot_number] != 'h') delivery[bot_number].reachedintersection(); //update coordinates
-	printf("I am at (%d,%d) \n",delivery[bot_number].p.x,delivery[bot_number].p.y);
+	int bot_number = data[1] - '0';
+	if( lastsigd[bot_number] == 'f' || lastsigd[bot_number] == 'l' || lastsigd[bot_number] == 'r' ) delivery[bot_number].reachedintersection(); //update coordinates
+	printf("Delivery bot%d am at (%d,%d) \n",bot_number,delivery[bot_number].p.x,delivery[bot_number].p.y);
 	Point destn=delivery[bot_number].destn;
 	if(delivery[bot_number].path == NULL) // if path not known 
 	{
@@ -39,7 +41,7 @@ void deliver(char *data) // code for delivery bot
 	if(!destn.myequal(delivery[bot_number].p)) 
 	{
 		Point *temppath = delivery[bot_number].path;
-		printf("Direction : %d, Path -> ",delivery[bot_number].dir);
+		printf("Delivery bot%d: Direction : %d, Path -> ",bot_number,delivery[bot_number].dir);
 		int abc = myabs(delivery[bot_number].p.x - destn.x) + myabs(delivery[bot_number].p.y - destn.y);
 		for(int i=0;i<abc;i++)
 		{
@@ -59,38 +61,40 @@ void deliver(char *data) // code for delivery bot
 		{
 			map[curx][cury] = -1;
 			map[x][y] = 0;
-			to_send[1] = getdirection(delivery[bot_number].dir,x,y,curx,cury,&delivery[bot_number].dir);
+			to_send[2] = getdirection(delivery[bot_number].dir,x,y,curx,cury,&delivery[bot_number].dir);
 			delivery[bot_number].path++;
 		}
 		else 
 		{
-			to_send[1] = 'h';
+			to_send[2] = 'h';
 			printf("Halting .... \n");
 		}
-		to_send[2]='\0';
-		lastsigd[bot_number] = to_send[1];
+		to_send[3]='\0';
+		lastsigd[bot_number] = to_send[2];
 		sendString(to_send);
 		printf("\n");
 
 	}
 	else // reached destination
 	{
-		printf("Reached Destination\n\n");
+		printf("Delivery bot%d reached Destination\n\n",bot_number);
 	}
 }
 
 void trigger_dbot(int bot_number)
 {
 	delivery[bot_number].is_free=false;
-	int temp=bot_number+1; // 
+	delivery[bot_number].items++;
+	int temp=bot_number; // 
 	char *a = new char[1];
 	itoa(temp,a,10);
 	char *to_send = new char[5];
 	to_send[0]='d';
 	to_send[1] = a[0];
-	to_send[2] = 'h';
+	to_send[2] = 'f';
 	to_send[3] = '\0';
-	lastsigg[bot_number] = to_send[2];
+	lastsigd[bot_number] = to_send[2];
+	delivery[bot_number].destn = getdestn_obj();
 	sendString(to_send);
 }
 
@@ -105,12 +109,18 @@ void collect_obj(int bot_number)
 	to_send[1] = a[0];
 	to_send[3] = '\0';
 
-	if(gripper[bot_number].items == 0) gripper[bot_number].destn = object_posn[0]; //Object Destination set at this time
-	if( lastsigg[bot_number] != 'h' || lastsigg[bot_number] != 'w') gripper[bot_number].reachedintersection(); //update coordinates
-	printf("I am at (%d,%d) \n",gripper[bot_number].p.x,gripper[bot_number].p.y);
+	if(gripper[bot_number].items == 0)
+	{
+		gripper[bot_number].destn = object_posn[0]; //Object Destination set at this time
+	}
+	//printf("Last signal to gripper: %c",lastsigg[bot_number]);
+	if( lastsigg[bot_number] == 'r' || lastsigg[bot_number] == 'l' || lastsigg[bot_number] == 'f' ) gripper[bot_number].reachedintersection(); //update coordinates
+	printf("Gripper %d am at (%d,%d) \n",bot_number,gripper[bot_number].p.x,gripper[bot_number].p.y);
 	Point destn=gripper[bot_number].destn;
+	//printf("My destination is (%d,%d) \n", destn.x , destn.y );
 	if(gripper[bot_number].path == NULL) // if path not known 
 	{
+		//printf("Finding path...\n");
 		gripper[bot_number].findPath();
 	}
 	if(!destn.myequal(gripper[bot_number].p)) 
@@ -139,7 +149,7 @@ void collect_obj(int bot_number)
 			map[curx][cury] = -1;
 			map[x][y] = 0;
 			to_send[2] = getdirection(gripper[bot_number].dir,x,y,curx,cury,&gripper[bot_number].dir);
-			delivery[bot_number].path++;
+			gripper[bot_number].path++;
 		}
 		else 
 		{
@@ -152,7 +162,8 @@ void collect_obj(int bot_number)
 	}
 	else
 	{
-		printf("Reached destination");
+		printf("Reached destination\n");
+		gripper[bot_number].path = NULL;
 		if(gripper[bot_number].items == 0) 
 		{
 			to_send[2] = 'c';
@@ -161,8 +172,6 @@ void collect_obj(int bot_number)
 		else if(gripper[bot_number].items == 1)
 		{
 			to_send[2] = 'd';
-			gripper[bot_number].items = 0;
-			trigger_dbot(gripper[bot_number].dest_bot);
 		}
 		lastsigg[bot_number] = to_send[2];
 		sendString(to_send);
@@ -170,38 +179,59 @@ void collect_obj(int bot_number)
 
 }
 
+void updateafterdrop(int bot_number)
+{
+	gripper[bot_number].items = 0;
+	object_posn++;
+	no_of_objects--;
+	gripper[bot_number].is_free = true;
+	trigger_dbot(gripper[bot_number].dest_bot);
+}
+
 int main()
 {
 	init("COM3");
 	int i=0;	
-	if(gripper[0].is_free)
-	{
-		collect_obj(0);
-		gripper[0].is_free = false;
-	}
+	int flag=0;
 	while(1)
 	{	
-		if(no_of_objects == 0 && allfree())
+		flag=0;
+		if(no_of_objects==0) 
 		{
-			printf("Delivered all objects\n");
+			flag=1;
+			printf("\nAll objects sorted by Gripper\n\n");
+		}
+		if(flag==1 && allfree())
+		{
+			printf("\n\nDelivered all objects\n");
+			printf("Project successfully done :) \n");
 			break;
+		}
+		if(gripper[0].is_free && flag==0)
+		{
+			collect_obj(0);
+			gripper[0].is_free = false;
 		}
 		data=new char[20];
 		getString();
 		printf("I read %s \n",data);
 		if(data[0] == 'd') // for delivery bot
 		{
-			data++;
 			deliver(data);
 		}
 		else if(data[0] == 'g')
 		{
 			if(data[3] == '\0')	collect_obj(0);
+			else if(data[3] == '*') //object dropped successfully by gripper
+			{
+				updateafterdrop(0);
+			}
 			else
 			{
 				char* temp = new char;
 				temp = data+3;
-				int i = getdestn(temp);
+				printf("Received rfid: %s\n",temp);
+				int i = getdestn_rfid(temp);
 				gripper[0].dest_bot = i;
 				gripper[0].destn = delivery[i].p;
 				collect_obj(0);

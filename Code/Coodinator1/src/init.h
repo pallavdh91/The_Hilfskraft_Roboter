@@ -7,6 +7,7 @@ int no_of_objects=2;
 Point *object_posn;
 const int num_col = 8;
 const int num_row = 8;
+rfid_obj *obj;
 
 HANDLE hSerial;
 DWORD dwBytesRead = 0;
@@ -28,14 +29,16 @@ void myinit()
 			map[i][j]=-1;
 		}
 	}
-	delivery[0].set_bot(0,0,2,0,0); 
-	delivery[1].set_bot(0,1,2,0,1);
-	gripper[0].set_bot(2,0,1,2,0);
+	gripper[0].set_bot(0,0,1,0,0); 
+	delivery[0].set_bot(1,2,2,1,2);
+	delivery[1].set_bot(0,3,1,0,3);
 	object_posn = new Point[no_of_objects];
-	object_posn[0].x = 1;
+	object_posn[0].x = 0;
 	object_posn[0].y = 1;
-	object_posn[1].x = 2;
-	object_posn[1].y = 2;
+	lastsigg[0]='w';
+	lastsigd[0]='w';
+	object_posn[1].x = 1;
+	object_posn[1].y = 0;
 }
 
 

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "point.h"
+#include "rfid.h"
 int myabs(int a)
 {
 	if(a>0) return a;
