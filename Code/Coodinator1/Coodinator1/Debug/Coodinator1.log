@@ -1,0 +1,23 @@
+﻿Build started 09-Apr-12 4:09:00 PM.
+     1>Project "C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Coodinator1\Coodinator1.vcxproj" on node 2 (build target(s)).
+     1>InitializeBuildStatus:
+         Touching "Debug\Coodinator1.unsuccessfulbuild".
+       ClCompile:
+         D:\installations\Visual C++\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
+     1>c:\users\namit\documents\iitb\6th sem\cs 308 - embedded systems lab\project\codes\coodinator1\coodinator1\main.cpp(87): warning C4996: 'itoa': The POSIX name for this item is deprecated. Instead, use the ISO C++ conformant name: _itoa. See online help for details.
+                 d:\installations\visual c++\vc\include\stdlib.h(867) : see declaration of 'itoa'
+       Link:
+         D:\installations\Visual C++\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Debug\Coodinator1.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Debug\Coodinator1.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Debug\Coodinator1.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Debug\Coodinator1.lib" /MACHINE:X86 Debug\main.obj
+         LINK : C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Debug\Coodinator1.exe not found or not built by the last incremental link; performing full link
+         Coodinator1.vcxproj -> C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Debug\Coodinator1.exe
+       Manifest:
+         C:\Program Files\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Debug\Coodinator1.exe;#1" /manifest Debug\Coodinator1.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\Coodinator1.unsuccessfulbuild".
+         Touching "Debug\Coodinator1.lastbuildstate".
+     1>Done Building Project "C:\Users\Namit\Documents\IITB\6th Sem\CS 308 - Embedded Systems Lab\project\codes\Coodinator1\Coodinator1\Coodinator1.vcxproj" (build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:02.92
