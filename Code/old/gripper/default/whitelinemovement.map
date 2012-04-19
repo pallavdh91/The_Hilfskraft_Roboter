@@ -1,0 +1,604 @@
+Archive member included because of file (symbol)
+
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_udivmodhi4.o)
+                              whitelinemovement.o (__udivmodhi4)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_exit.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o (exit)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clear_bss.o)
+                              whitelinemovement.o (__do_clear_bss)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fixunssfsi.o)
+                              whitelinemovement.o (__fixunssfsi)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fixunssfsi.o) (__subsf3)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_mul_sf.o)
+                              whitelinemovement.o (__mulsf3)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_gt_sf.o)
+                              whitelinemovement.o (__gtsf2)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_ge_sf.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fixunssfsi.o) (__gesf2)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_lt_sf.o)
+                              whitelinemovement.o (__ltsf2)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_si_to_sf.o)
+                              whitelinemovement.o (__floatsisf)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_sf_to_si.o)
+                              whitelinemovement.o (__fixsfsi)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_thenan_sf.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o) (__thenan_sf)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_prologue.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o) (__prologue_saves__)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_epilogue.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o) (__epilogue_restores__)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clzsi2.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_si_to_sf.o) (__clzsi2)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_pack_sf.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o) (__pack_f)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_unpack_sf.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o) (__unpack_f)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fpcmp_parts_sf.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_gt_sf.o) (__fpcmp_parts_f)
+c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clz.o)
+                              c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clzsi2.o) (__clz_tab)
+
+Allocating common symbols
+Common symbol       size              file
+
+mytemp              0x1               whitelinemovement.o
+million             0x2               whitelinemovement.o
+ADC_Value           0x1               whitelinemovement.o
+temp1               0x2               whitelinemovement.o
+i                   0x2               whitelinemovement.o
+tens                0x2               whitelinemovement.o
+data                0x1               whitelinemovement.o
+hundred             0x2               whitelinemovement.o
+unit                0x2               whitelinemovement.o
+thousand            0x2               whitelinemovement.o
+rfidval             0x14              whitelinemovement.o
+pow_diff            0x4               whitelinemovement.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+text             0x00000000         0x00100000         xr
+data             0x00800200         0x0000fe00         rw !x
+eeprom           0x00810000         0x00010000         rw !x
+fuse             0x00820000         0x00000400         rw !x
+lock             0x00830000         0x00000400         rw !x
+signature        0x00840000         0x00000400         rw !x
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+Address of section .data set to 0x800200
+LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+LOAD whitelinemovement.o
+LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a
+LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6\libc.a
+LOAD c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.text           0x00000000     0x51be
+ *(.vectors)
+ .vectors       0x00000000       0xe4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+                0x00000000                __vectors
+                0x00000000                __vector_default
+ *(.vectors)
+ *(.progmem.gcc*)
+ *(.progmem*)
+                0x000000e4                . = ALIGN (0x2)
+                0x000000e4                __trampolines_start = .
+ *(.trampolines)
+ .trampolines   0x000000e4        0x0 linker stubs
+ *(.trampolines*)
+                0x000000e4                __trampolines_end = .
+ *(.jumptables)
+ *(.jumptables*)
+ *(.lowtext)
+ *(.lowtext*)
+                0x000000e4                __ctors_start = .
+ *(.ctors)
+                0x000000e4                __ctors_end = .
+                0x000000e4                __dtors_start = .
+ *(.dtors)
+                0x000000e4                __dtors_end = .
+ SORT(*)(.ctors)
+ SORT(*)(.dtors)
+ *(.init0)
+ .init0         0x000000e4        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+                0x000000e4                __init
+ *(.init0)
+ *(.init1)
+ *(.init1)
+ *(.init2)
+ .init2         0x000000e4       0x10 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+ *(.init2)
+ *(.init3)
+ *(.init3)
+ *(.init4)
+ .init4         0x000000f4       0x1a c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+                0x000000f4                __do_copy_data
+ .init4         0x0000010e       0x10 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clear_bss.o)
+                0x0000010e                __do_clear_bss
+ *(.init4)
+ *(.init5)
+ *(.init5)
+ *(.init6)
+ *(.init6)
+ *(.init7)
+ *(.init7)
+ *(.init8)
+ *(.init8)
+ *(.init9)
+ .init9         0x0000011e        0x8 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+ *(.init9)
+ *(.text)
+ .text          0x00000126        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+                0x00000126                __vector_38
+                0x00000126                __vector_22
+                0x00000126                __vector_28
+                0x00000126                __vector_1
+                0x00000126                __vector_32
+                0x00000126                __vector_34
+                0x00000126                __vector_24
+                0x00000126                __vector_12
+                0x00000126                __vector_55
+                0x00000126                __vector_46
+                0x00000126                __bad_interrupt
+                0x00000126                __vector_6
+                0x00000126                __vector_31
+                0x00000126                __vector_35
+                0x00000126                __vector_39
+                0x00000126                __vector_3
+                0x00000126                __vector_23
+                0x00000126                __vector_30
+                0x00000126                __vector_45
+                0x00000126                __vector_11
+                0x00000126                __vector_13
+                0x00000126                __vector_17
+                0x00000126                __vector_19
+                0x00000126                __vector_56
+                0x00000126                __vector_7
+                0x00000126                __vector_49
+                0x00000126                __vector_41
+                0x00000126                __vector_43
+                0x00000126                __vector_27
+                0x00000126                __vector_5
+                0x00000126                __vector_33
+                0x00000126                __vector_47
+                0x00000126                __vector_52
+                0x00000126                __vector_37
+                0x00000126                __vector_4
+                0x00000126                __vector_44
+                0x00000126                __vector_51
+                0x00000126                __vector_9
+                0x00000126                __vector_2
+                0x00000126                __vector_21
+                0x00000126                __vector_15
+                0x00000126                __vector_36
+                0x00000126                __vector_29
+                0x00000126                __vector_40
+                0x00000126                __vector_8
+                0x00000126                __vector_26
+                0x00000126                __vector_48
+                0x00000126                __vector_14
+                0x00000126                __vector_53
+                0x00000126                __vector_10
+                0x00000126                __vector_50
+                0x00000126                __vector_16
+                0x00000126                __vector_18
+                0x00000126                __vector_20
+                0x00000126                __vector_42
+ .text          0x0000012a     0x43ec whitelinemovement.o
+                0x00002cb6                leave
+                0x00001896                init_sensor_values
+                0x0000024c                port_init
+                0x00001e22                turn_right
+                0x00002ed4                go_down
+                0x0000012a                timer5_init
+                0x000036ec                checkstraight
+                0x00002a24                senddroppedsig
+                0x00002bce                clearrfid
+                0x00000446                right
+                0x000036fa                move_bot
+                0x00001dfc                turn_left
+                0x000025fa                __vector_25
+                0x00000432                left
+                0x00000188                lcd_port_config
+                0x00000386                display_led
+                0x0000046e                small_right
+                0x00002c7a                arm_down
+                0x00000304                init_devices
+                0x00001e48                checkobstacle
+                0x00001524                lcd_home
+                0x00002aac                __vector_54
+                0x00003506                checkarm
+                0x0000045a                small_left
+                0x00001270                lcd_wr_char
+                0x000032c0                release
+                0x00001538                lcd_string
+                0x00000294                uart0_init
+                0x00000332                buzzer_off
+                0x00001916                take_turn
+                0x0000161e                lcd_print
+                0x00002ca2                hold
+                0x0000040a                forward
+                0x00002cde                go_up
+                0x00000fbc                lcd_wr_command
+                0x000003e0                velocity
+                0x0000159a                lcd_cursor
+                0x0000041e                backward
+                0x000017e6                ADC_Conversion
+                0x00002a6a                comintersection
+                0x00000e94                lcd_init
+                0x000044ec                main
+                0x0000035c                buzzer_on
+                0x00002bec                readrfidtag
+                0x0000230a                follow
+                0x0000383e                run
+                0x00000262                adc_init
+                0x00000496                lcd_set_4bit
+                0x000002cc                uart3_rfid_init
+                0x000030ca                grab
+                0x00002c4e                arm_motion
+                0x000003a2                motion
+                0x0000185a                print_sensor
+                0x00002700                xbee_sendString
+                0x00000482                stop
+                0x000034b6                checkfollow
+                0x00002cca                stop_arm
+                0x00001f8e                checkintersection
+                0x00002c8e                arm_up
+                0x000001b2                config
+ .text          0x00004516        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_udivmodhi4.o)
+ .text          0x00004516        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_exit.o)
+ .text          0x00004516        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clear_bss.o)
+ .text          0x00004516       0x58 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fixunssfsi.o)
+                0x00004516                __fixunssfsi
+ .text          0x0000456e      0x354 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o)
+                0x00004806                __subsf3
+                0x00004868                __addsf3
+ .text          0x000048c2      0x1f4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_mul_sf.o)
+                0x000048c2                __mulsf3
+ .text          0x00004ab6       0x60 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_gt_sf.o)
+                0x00004ab6                __gtsf2
+ .text          0x00004b16       0x60 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_ge_sf.o)
+                0x00004b16                __gesf2
+ .text          0x00004b76       0x60 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_lt_sf.o)
+                0x00004b76                __ltsf2
+ .text          0x00004bd6       0xbc c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_si_to_sf.o)
+                0x00004bd6                __floatsisf
+ .text          0x00004c92       0xa8 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_sf_to_si.o)
+                0x00004c92                __fixsfsi
+ .text          0x00004d3a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_thenan_sf.o)
+ .text          0x00004d3a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_prologue.o)
+ .text          0x00004d3a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_epilogue.o)
+ .text          0x00004d3a       0x9e c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clzsi2.o)
+                0x00004d3a                __clzsi2
+ .text          0x00004dd8      0x1aa c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_pack_sf.o)
+                0x00004dd8                __pack_f
+ .text          0x00004f82       0xf0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_unpack_sf.o)
+                0x00004f82                __unpack_f
+ .text          0x00005072       0xb2 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fpcmp_parts_sf.o)
+                0x00005072                __fpcmp_parts_f
+ .text          0x00005124        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clz.o)
+                0x00005124                . = ALIGN (0x2)
+ *(.text.*)
+ .text.libgcc   0x00005124       0x28 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_udivmodhi4.o)
+                0x00005124                __udivmodhi4
+ .text.libgcc   0x0000514c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_exit.o)
+ .text.libgcc   0x0000514c        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clear_bss.o)
+ .text.libgcc   0x0000514c       0x38 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_prologue.o)
+                0x0000514c                __prologue_saves__
+ .text.libgcc   0x00005184       0x36 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_epilogue.o)
+                0x00005184                __epilogue_restores__
+                0x000051ba                . = ALIGN (0x2)
+ *(.fini9)
+ .fini9         0x000051ba        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_exit.o)
+                0x000051ba                exit
+                0x000051ba                _exit
+ *(.fini9)
+ *(.fini8)
+ *(.fini8)
+ *(.fini7)
+ *(.fini7)
+ *(.fini6)
+ *(.fini6)
+ *(.fini5)
+ *(.fini5)
+ *(.fini4)
+ *(.fini4)
+ *(.fini3)
+ *(.fini3)
+ *(.fini2)
+ *(.fini2)
+ *(.fini1)
+ *(.fini1)
+ *(.fini0)
+ .fini0         0x000051ba        0x4 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_exit.o)
+ *(.fini0)
+                0x000051be                _etext = .
+
+.data           0x00800200      0x17a load address 0x000051be
+                0x00800200                PROVIDE (__data_start, .)
+ *(.data)
+ .data          0x00800200        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+ .data          0x00800200       0x71 whitelinemovement.o
+                0x00800202                rightspeed
+                0x0080020a                max
+                0x00800204                delta
+                0x00800200                leftspeed
+                0x0080020c                thresh
+                0x00800240                myid
+                0x00800206                kp
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_udivmodhi4.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_exit.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clear_bss.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fixunssfsi.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_mul_sf.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_gt_sf.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_ge_sf.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_lt_sf.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_si_to_sf.o)
+ .data          0x00800271        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_sf_to_si.o)
+ .data          0x00800271        0x8 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_thenan_sf.o)
+                0x00800271                __thenan_sf
+ .data          0x00800279        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_prologue.o)
+ .data          0x00800279        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_epilogue.o)
+ .data          0x00800279        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clzsi2.o)
+ .data          0x00800279        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_pack_sf.o)
+ .data          0x00800279        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_unpack_sf.o)
+ .data          0x00800279        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fpcmp_parts_sf.o)
+ .data          0x00800279      0x100 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clz.o)
+                0x00800279                __clz_tab
+ *(.data*)
+ *(.rodata)
+ *(.rodata*)
+ *(.gnu.linkonce.d*)
+                0x0080037a                . = ALIGN (0x2)
+ *fill*         0x00800379        0x1 00
+                0x0080037a                _edata = .
+                0x0080037a                PROVIDE (__data_end, .)
+
+.bss            0x0080037a       0x4c
+                0x0080037a                PROVIDE (__bss_start, .)
+ *(.bss)
+ .bss           0x0080037a        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/../../../../avr/lib/avr6/crtm2560.o
+ .bss           0x0080037a       0x23 whitelinemovement.o
+                0x0080037f                kd
+                0x00800393                last_prop
+                0x0080039b                rfid_count
+                0x0080037d                fsharp
+                0x00800397                chkid1
+                0x0080037c                rline
+                0x00800383                ki
+                0x00800399                recv_count
+                0x0080038b                der
+                0x0080037b                cline
+                0x00800398                chkid2
+                0x00800387                prop
+                0x0080038f                integral
+                0x0080037e                fir
+                0x0080037a                lline
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_udivmodhi4.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_exit.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clear_bss.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fixunssfsi.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_addsub_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_mul_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_gt_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_ge_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_lt_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_si_to_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_sf_to_si.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_thenan_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_prologue.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_epilogue.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clzsi2.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_pack_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_unpack_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_fpcmp_parts_sf.o)
+ .bss           0x0080039d        0x0 c:/winavr-20090313/bin/../lib/gcc/avr/4.3.2/avr6\libgcc.a(_clz.o)
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x0080039d       0x29 whitelinemovement.o
+                0x0080039d                mytemp
+                0x0080039e                million
+                0x008003a0                ADC_Value
+                0x008003a1                temp1
+                0x008003a3                i
+                0x008003a5                tens
+                0x008003a7                data
+                0x008003a8                hundred
+                0x008003aa                unit
+                0x008003ac                thousand
+                0x008003ae                rfidval
+                0x008003c2                pow_diff
+                0x008003c6                PROVIDE (__bss_end, .)
+                0x000051be                __data_load_start = LOADADDR (.data)
+                0x00005338                __data_load_end = (__data_load_start + SIZEOF (.data))
+
+.noinit         0x008003c6        0x0
+                0x008003c6                PROVIDE (__noinit_start, .)
+ *(.noinit*)
+                0x008003c6                PROVIDE (__noinit_end, .)
+                0x008003c6                _end = .
+                0x008003c6                PROVIDE (__heap_start, .)
+
+.eeprom         0x00810000        0x0
+ *(.eeprom*)
+                0x00810000                __eeprom_end = .
+
+.fuse
+ *(.fuse)
+ *(.lfuse)
+ *(.hfuse)
+ *(.efuse)
+
+.lock
+ *(.lock*)
+
+.signature
+ *(.signature*)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment
+ *(.comment)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x00000000       0x20
+ *(.debug_aranges)
+ .debug_aranges
+                0x00000000       0x20 whitelinemovement.o
+
+.debug_pubnames
+                0x00000000      0x4df
+ *(.debug_pubnames)
+ .debug_pubnames
+                0x00000000      0x4df whitelinemovement.o
+
+.debug_info     0x00000000     0x17e7
+ *(.debug_info)
+ .debug_info    0x00000000     0x17e7 whitelinemovement.o
+ *(.gnu.linkonce.wi.*)
+
+.debug_abbrev   0x00000000      0x222
+ *(.debug_abbrev)
+ .debug_abbrev  0x00000000      0x222 whitelinemovement.o
+
+.debug_line     0x00000000     0x2207
+ *(.debug_line)
+ .debug_line    0x00000000     0x2207 whitelinemovement.o
+
+.debug_frame    0x00000000      0x3d0
+ *(.debug_frame)
+ .debug_frame   0x00000000      0x3d0 whitelinemovement.o
+
+.debug_str      0x00000000      0x484
+ *(.debug_str)
+ .debug_str     0x00000000      0x484 whitelinemovement.o
+                                0x4e2 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+OUTPUT(whitelinemovement.elf elf32-avr)
+LOAD linker stubs

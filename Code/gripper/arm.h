@@ -41,7 +41,7 @@ void stop_arm()
 void go_up()
 {
 	arm_up();
-    _delay_ms(3500);
+    _delay_ms(2750);
     stop_arm();
     _delay_ms(2000);
 }
@@ -49,7 +49,7 @@ void go_up()
 void go_down()
 {
 	arm_down();
-	_delay_ms(3200);
+	_delay_ms(2450);
 	stop_arm();
 	_delay_ms(2000);
 }
@@ -57,7 +57,7 @@ void go_down()
 void grab()
 {
 	 hold();
-    _delay_ms(2700);
+    _delay_ms(1600);
     stop_arm();
     _delay_ms(2000);
 }
@@ -65,7 +65,7 @@ void grab()
 void release()
 {
 	leave();
-	_delay_ms(2700);
+	_delay_ms(1600);
 	stop();
 	_delay_ms(1000);
         

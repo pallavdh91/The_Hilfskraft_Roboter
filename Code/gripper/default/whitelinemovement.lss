@@ -6770,8 +6770,8 @@ void go_up()
 	arm_up();
     2cf2:	0e 94 47 16 	call	0x2c8e	; 0x2c8e <arm_up>
     2cf6:	80 e0       	ldi	r24, 0x00	; 0
-    2cf8:	90 ec       	ldi	r25, 0xC0	; 192
-    2cfa:	aa e5       	ldi	r26, 0x5A	; 90
+    2cf8:	90 ee       	ldi	r25, 0xE0	; 224
+    2cfa:	ab e2       	ldi	r26, 0x2B	; 43
     2cfc:	b5 e4       	ldi	r27, 0x45	; 69
     2cfe:	89 8f       	std	Y+25, r24	; 0x19
     2d00:	9a 8f       	std	Y+26, r25	; 0x1a
@@ -6906,7 +6906,7 @@ _delay_ms(double __ms)
     2dd4:	f1 f7       	brne	.-4      	; 0x2dd2 <go_up+0xf4>
     2dd6:	98 8b       	std	Y+16, r25	; 0x10
     2dd8:	8f 87       	std	Y+15, r24	; 0x0f
-    _delay_ms(3500);
+    _delay_ms(2750);
     stop_arm();
     2dda:	0e 94 65 16 	call	0x2cca	; 0x2cca <stop_arm>
     2dde:	80 e0       	ldi	r24, 0x00	; 0
@@ -7075,8 +7075,8 @@ void go_down()
 	arm_down();
     2ee8:	0e 94 3d 16 	call	0x2c7a	; 0x2c7a <arm_down>
     2eec:	80 e0       	ldi	r24, 0x00	; 0
-    2eee:	90 e0       	ldi	r25, 0x00	; 0
-    2ef0:	a8 e4       	ldi	r26, 0x48	; 72
+    2eee:	90 e2       	ldi	r25, 0x20	; 32
+    2ef0:	a9 e1       	ldi	r26, 0x19	; 25
     2ef2:	b5 e4       	ldi	r27, 0x45	; 69
     2ef4:	89 8f       	std	Y+25, r24	; 0x19
     2ef6:	9a 8f       	std	Y+26, r25	; 0x1a
@@ -7211,7 +7211,7 @@ _delay_ms(double __ms)
     2fca:	f1 f7       	brne	.-4      	; 0x2fc8 <go_down+0xf4>
     2fcc:	98 8b       	std	Y+16, r25	; 0x10
     2fce:	8f 87       	std	Y+15, r24	; 0x0f
-	_delay_ms(3200);
+	_delay_ms(2450);
 	stop_arm();
     2fd0:	0e 94 65 16 	call	0x2cca	; 0x2cca <stop_arm>
     2fd4:	80 e0       	ldi	r24, 0x00	; 0
@@ -7380,9 +7380,9 @@ void grab()
 	 hold();
     30de:	0e 94 51 16 	call	0x2ca2	; 0x2ca2 <hold>
     30e2:	80 e0       	ldi	r24, 0x00	; 0
-    30e4:	90 ec       	ldi	r25, 0xC0	; 192
-    30e6:	a8 e2       	ldi	r26, 0x28	; 40
-    30e8:	b5 e4       	ldi	r27, 0x45	; 69
+    30e4:	90 e0       	ldi	r25, 0x00	; 0
+    30e6:	a8 ec       	ldi	r26, 0xC8	; 200
+    30e8:	b4 e4       	ldi	r27, 0x44	; 68
     30ea:	89 8f       	std	Y+25, r24	; 0x19
     30ec:	9a 8f       	std	Y+26, r25	; 0x1a
     30ee:	ab 8f       	std	Y+27, r26	; 0x1b
@@ -7516,7 +7516,7 @@ _delay_ms(double __ms)
     31c0:	f1 f7       	brne	.-4      	; 0x31be <grab+0xf4>
     31c2:	98 8b       	std	Y+16, r25	; 0x10
     31c4:	8f 87       	std	Y+15, r24	; 0x0f
-    _delay_ms(2700);
+    _delay_ms(1600);
     stop_arm();
     31c6:	0e 94 65 16 	call	0x2cca	; 0x2cca <stop_arm>
     31ca:	80 e0       	ldi	r24, 0x00	; 0
@@ -7685,9 +7685,9 @@ void release()
 	leave();
     32d4:	0e 94 5b 16 	call	0x2cb6	; 0x2cb6 <leave>
     32d8:	80 e0       	ldi	r24, 0x00	; 0
-    32da:	90 ec       	ldi	r25, 0xC0	; 192
-    32dc:	a8 e2       	ldi	r26, 0x28	; 40
-    32de:	b5 e4       	ldi	r27, 0x45	; 69
+    32da:	90 e0       	ldi	r25, 0x00	; 0
+    32dc:	a8 ec       	ldi	r26, 0xC8	; 200
+    32de:	b4 e4       	ldi	r27, 0x44	; 68
     32e0:	89 8f       	std	Y+25, r24	; 0x19
     32e2:	9a 8f       	std	Y+26, r25	; 0x1a
     32e4:	ab 8f       	std	Y+27, r26	; 0x1b
@@ -7821,7 +7821,7 @@ _delay_ms(double __ms)
     33b6:	f1 f7       	brne	.-4      	; 0x33b4 <release+0xf4>
     33b8:	98 8b       	std	Y+16, r25	; 0x10
     33ba:	8f 87       	std	Y+15, r24	; 0x0f
-	_delay_ms(2700);
+	_delay_ms(1600);
 	stop();
     33bc:	0e 94 41 02 	call	0x482	; 0x482 <stop>
     33c0:	80 e0       	ldi	r24, 0x00	; 0
@@ -9485,8 +9485,8 @@ _delay_ms(double __ms)
     3e84:	ef 5a       	subi	r30, 0xAF	; 175
     3e86:	ff 4f       	sbci	r31, 0xFF	; 255
     3e88:	80 e0       	ldi	r24, 0x00	; 0
-    3e8a:	90 e4       	ldi	r25, 0x40	; 64
-    3e8c:	a3 e8       	ldi	r26, 0x83	; 131
+    3e8a:	90 ec       	ldi	r25, 0xC0	; 192
+    3e8c:	a8 e2       	ldi	r26, 0x28	; 40
     3e8e:	b5 e4       	ldi	r27, 0x45	; 69
     3e90:	80 83       	st	Z, r24
     3e92:	91 83       	std	Z+1, r25	; 0x01
@@ -9683,7 +9683,7 @@ _delay_ms(double __ms)
     3fe2:	ff 4f       	sbci	r31, 0xFF	; 255
     3fe4:	91 83       	std	Z+1, r25	; 0x01
     3fe6:	80 83       	st	Z, r24
-			_delay_ms(4200);
+			_delay_ms(2700);
 			stop_arm();
     3fe8:	0e 94 65 16 	call	0x2cca	; 0x2cca <stop_arm>
     3fec:	fe 01       	movw	r30, r28
@@ -9848,8 +9848,8 @@ _delay_ms(double __ms)
 			arm_up();
     40fa:	0e 94 47 16 	call	0x2c8e	; 0x2c8e <arm_up>
     40fe:	80 e0       	ldi	r24, 0x00	; 0
-    4100:	90 e7       	ldi	r25, 0x70	; 112
-    4102:	a4 e9       	ldi	r26, 0x94	; 148
+    4100:	90 ec       	ldi	r25, 0xC0	; 192
+    4102:	a1 e4       	ldi	r26, 0x41	; 65
     4104:	b5 e4       	ldi	r27, 0x45	; 69
     4106:	8d ab       	std	Y+53, r24	; 0x35
     4108:	9e ab       	std	Y+54, r25	; 0x36
@@ -9984,7 +9984,7 @@ _delay_ms(double __ms)
     41dc:	f1 f7       	brne	.-4      	; 0x41da <run+0x99c>
     41de:	9c a7       	std	Y+44, r25	; 0x2c
     41e0:	8b a7       	std	Y+43, r24	; 0x2b
-		    _delay_ms(4750);
+		    _delay_ms(3100);
 		    stop_arm();
     41e2:	0e 94 65 16 	call	0x2cca	; 0x2cca <stop_arm>
     41e6:	80 e0       	ldi	r24, 0x00	; 0

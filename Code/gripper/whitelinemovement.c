@@ -122,12 +122,12 @@ void run(void)
 		{
 			data='w';
 			arm_down();
-			_delay_ms(4200);
+			_delay_ms(2700);
 			stop_arm();
 			_delay_ms(2000);
 	       	grab();
 			arm_up();
-		    _delay_ms(4750);
+		    _delay_ms(3100);
 		    stop_arm();
 		    _delay_ms(2000);
 			lcd_cursor(2,1);
